@@ -20,10 +20,13 @@
       <%= f.text_area :body %>
     <%= f.submit 'Create Book' %>
   <% end %>
-  <h2>Books</h2>
   
-<h2>Title</h2>
-<p><%= @book.title %></p>
-
-<h2>Opinion</h2>
-<p><%= @book.body %></p>
+  <h2>Book detail</h2>
+  <%= image_tag @user.get_profile_image(100,100) %>
+  <%= link_to @user.name, user_path(@user) %>
+  <%= @book.title %>
+  <%= @book.body %>
+  <% if @book.user_id == current_user.id %>
+    <%= link_to "Edit", edit_book_path(@book) %>
+    <%= link_to "Destroy", book_path(@book), method: :delete %>
+  <% end %>

@@ -1,0 +1,28 @@
+<table class = "table">
+<h2>User info</h2>
+
+<thead>
+  <tr>
+    <th scope="col"><%= image_tag user.get_profile_image(100,100) %></th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr></tr>
+  <tr>
+  <th scope="row">Name</th>
+  <td><%= user.name %></td>
+  </tr>
+  <tr>
+  <th scope="row">Introduction</th>
+  <td><%= user.introduction %></td>
+  </tr>
+  <tr>
+  <th>
+  <%= link_to edit_user_path(current_user), class: "btn-btn-outline-secondary", method: :get do %>
+  <i class="fa-solid fa-user-gear"></i>
+  <% end %>
+  </th>
+  </tr>
+  </tbody>
+</table>
