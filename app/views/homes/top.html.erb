@@ -1,15 +1,27 @@
-<h1>welcom to Bookers!!</h1>
+<% if flash[:notice] %>
+<p><%= flash[:notice] %></p>
+<% end %>
+
+<div class="container">
+<div class="row">
+<div class="mx-auto">
+<h1>welcom to <i class="fa-solid fa-book"></i>
+<strong>Bookers!!</strong></h2>
 <p>
-  In Bookers,<br>
+  In <i class="fa-solid fa-book"></i><strong>Bookers</strong>,<br>
   you can share and exchange your opinions,inpressions,and emotions<br>
   about various books!
 </p>
-
- <li>
-  <%= link_to "Log in", new_user_session_path %>
- </li>
- <li>
-   <%= link_to "Sign up", new_user_registration_path %>
- </li>
- 
- 
+<div class="btn-wrapper col-10 mx-auto">
+<div class="row">
+<a class="btn btn-info btn-sm btn-block mb-3 sign-in", 
+ <%= link_to "Log in", new_user_session_path %>
+</a>
+<a class="btn btn-success btn-sm btn-block sign-up", 
+ <%= link_to "Sign up", new_user_registration_path %>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>

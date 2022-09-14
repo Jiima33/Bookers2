@@ -1,8 +1,10 @@
-<div class = "tabele"></div>
-<%= form_with model: book, url:'/books', method: :post do |f| %>
-  <h4>Title</h4>
+<div class = "tabele">
+    <h2>New Book</h2>
+    <%= form_with model: book, url:'/books', method: :post do |f| %>
+    <h4>Title</h4>
     <%= f.text_field :title %>
-  <h4>Option</h4>
+    <h4>Opinion</h4>
     <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
-<% end %>
+    <%= f.submit 'Creat Book', class: "btn btn-success" %>
+    <% end %>
+</div>

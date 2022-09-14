@@ -1,28 +1,21 @@
 <table class = "table">
 <h2>User info</h2>
-
-<thead>
-  <tr>
-    <th scope="col"><%= image_tag user.get_profile_image(100,100) %></th>
-  </tr>
-</thead>
-
-<tbody>
+<%= image_tag user.get_profile_image(100,100) %>
+ <tbody>
   <tr></tr>
   <tr>
-  <th scope="row">Name</th>
-  <td><%= user.name %></td>
+   <th>Name</th>
+   <td><%= user.name %></td>
   </tr>
+  
   <tr>
-  <th scope="row">Introduction</th>
-  <td><%= user.introduction %></td>
+   <th>Introduction</th>
+   <td><%= user.introduction %></td>
   </tr>
-  <tr>
-  <th>
-  <%= link_to edit_user_path(current_user), class: "btn-btn-outline-secondary", method: :get do %>
-  <i class="fa-solid fa-user-gear"></i>
-  <% end %>
-  </th>
-  </tr>
-  </tbody>
+ </tbody>
 </table>
+  <div class="row">
+  <button type="button" class="btn btn-outline-secondary btn-lg btn-block">
+  <%= link_to '', edit_user_path(user.id), class: "fa-solid fa-user-gear" %>
+  </button>
+  </div>

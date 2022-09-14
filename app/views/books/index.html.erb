@@ -1,18 +1,28 @@
-<div class="container">
+
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+  
+<% end %><div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
      <%= render 'users/userinfo', user:@user %>
-     <h2>New Book</h2>
-     <%= render 'books/new', book:@book %>
+      <%= render 'books/new', book:@book %>
     </div>
 
 <div class="col-md-8">
-<table class="table book-index">
+<table class="table table-hover">
 <h2>Books</h2>
   <thead>
+    <tr>
     <th></th>
     <th>Title</th>
     <th>Opinion</th>
+    </tr>
   </thead>
   
   <tbody>

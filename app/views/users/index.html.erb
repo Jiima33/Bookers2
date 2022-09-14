@@ -1,38 +1,30 @@
-  <h2>User info</h2>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <tr>
-    <th>Name</th>
-    <th><%= @user.name %></th>
-  </tr>
-  <tr>
-    <th>Introduction</th>
-    <th><%= @user.introduction %></th>
-  </tr>
-  <tr>
-    <th><%= link_to 'edit', edit_user_path(current_user) %></th>
-  </tr>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+     <%= render 'users/userinfo', user:@user %>
+      <%= render 'books/new', book:@book %>
+    </div>
   
-  <h2>New book</h2>
-  <%= form_with model: @book, url:'/books', method: :post do |f| %>
-    <h4>Title</h4>
-      <%= f.text_field :title %>
-    <h4>Option</h4>
-      <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
-  <% end %>
-  
-  <div class="col-md-8">
-<table class="table book-index">
+
+<div class="col-md-8">
+<table class="table table-hover">
 <h2>Users</h2>
   <thead>
-    <th></th>
+    <tr>
     <th>image</th>
     <th>name</th>
+    <th></th>
+    </tr>
   </thead>
+  
   <tbody>
-    <% @users.each do |user| %>
-    <%= image_tag @user.get_profile_image(50,50) %>
-    <%= user.name %>
-    <%= link_to "Show", "/users/#{user.id}" %>
-    <% end %>
+  <% @users.each do |user %>
+  <%= image_tag @user.get_profile_image(50,50) %>
+  <%= user.name %>
+  <%= link_to "Show", "/users/#{user.id}" %>
+  <% end %>
  </tbody>
+</table>
+</div>
+</div>
+</div>
